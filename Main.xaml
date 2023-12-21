@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Main" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1221,641" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1152,746" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -83,18 +83,10 @@
       <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="496,500" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="496,681" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
-      <Variable x:TypeArguments="scg:Dictionary(x:Int32, x:String)" Name="TourDeFranceWinners">
-        <Variable.Default>
-          <VisualBasicValue x:TypeArguments="scg:Dictionary(x:Int32, x:String)" ExpressionText="New Dictionary(Of Int32,String) From {{2006,&quot;Oscar Pereiro&quot;},{2007,&quot;Alberto Contador&quot;}, {2008, &quot;Carlos Sastre&quot;}, {2009,&quot;Alberto Contador&quot;}, {2010, &quot;Andy Schleck&quot;}, {2011, &quot;Cadel Evans&quot;}, {2012,&quot;Bradley Wiggins&quot;}, {2013,&quot;Chris Froome&quot;}, {2014,&quot;Vincenzo Nibali&quot;},{2015,&quot;Chris Froome&quot;},{2016,&quot;Chris Froome&quot;},{2017,&quot;Chris Froome&quot;}, {2018,&quot;Geraint Thomas&quot;}}" />
-        </Variable.Default>
-      </Variable>
-      <Variable x:TypeArguments="scg:Dictionary(x:String, x:Int32)" Name="WinnerCounts">
-        <Variable.Default>
-          <VisualBasicValue x:TypeArguments="scg:Dictionary(x:String, x:Int32)" ExpressionText="New Dictionary(Of String,Int32)" />
-        </Variable.Default>
-      </Variable>
+      <Variable x:TypeArguments="scg:Dictionary(x:Int32, x:String)" Default="[New Dictionary(Of Int32,String) From {{2006,&quot;Oscar Pereiro&quot;},{2007,&quot;Alberto Contador&quot;}, {2008, &quot;Carlos Sastre&quot;}, {2009,&quot;Alberto Contador&quot;}, {2010, &quot;Andy Schleck&quot;}, {2011, &quot;Cadel Evans&quot;}, {2012,&quot;Bradley Wiggins&quot;}, {2013,&quot;Chris Froome&quot;}, {2014,&quot;Vincenzo Nibali&quot;},{2015,&quot;Chris Froome&quot;},{2016,&quot;Chris Froome&quot;},{2017,&quot;Chris Froome&quot;}, {2018,&quot;Geraint Thomas&quot;}}]" Name="TourDeFranceWinners" />
+      <Variable x:TypeArguments="scg:Dictionary(x:String, x:Int32)" Default="[New Dictionary(Of String,Int32)]" Name="WinnerCounts" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -148,12 +140,8 @@
                     <InvokeMethod.TargetObject>
                       <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Int32)">[WinnerCounts]</InArgument>
                     </InvokeMethod.TargetObject>
-                    <InArgument x:TypeArguments="x:String">
-                      <VisualBasicValue x:TypeArguments="x:String" ExpressionText="WinnerName" />
-                    </InArgument>
-                    <InArgument x:TypeArguments="x:Int32">
-                      <Literal x:TypeArguments="x:Int32" Value="1" />
-                    </InArgument>
+                    <InArgument x:TypeArguments="x:String">[WinnerName]</InArgument>
+                    <InArgument x:TypeArguments="x:Int32">1</InArgument>
                   </InvokeMethod>
                 </Sequence>
               </If.Else>
@@ -233,5 +221,6 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:ForEach>
+    <ui:LogMessage DisplayName="Log Message - Confirmation" sap:VirtualizedContainerService.HintSize="334,141" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Test buttons on botton left corner&quot;]" />
   </Sequence>
 </Activity>
